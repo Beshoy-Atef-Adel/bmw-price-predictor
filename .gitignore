@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.env
+*.log
+.DS_Store
+Thumbs.db
+cleaned_data.csv
+cv_results.csv
+model_comparison.csv
+enhance_ml.py
+insert_cells.py
+add_ml_cells.py
+fix_unicode.py
+add_deploy.py

@@ -1,0 +1,124 @@
+
+═══════════════════════════════════════════════════════════════
+   BMW Used Car Price Predictor - Setup & Deployment Guide
+═══════════════════════════════════════════════════════════════
+
+
+═══════════════════════════════════════════════════════════════
+PART 1: Run Locally / تشغيل المشروع على جهازك
+═══════════════════════════════════════════════════════════════
+
+Requirements / المتطلبات:
+  - Python 3.9 or newer / Python 3.9 أو أحدث
+  - pip
+
+Steps / الخطوات:
+
+1. Open PowerShell in the project folder
+   افتحي PowerShell في الفولدر (Shift + Right Click → Open PowerShell)
+
+2. Install dependencies (first time only):
+   ثبّتي المكتبات (أول مرة بس):
+
+   pip install -r requirements.txt
+
+3. Run the app / شغّلي التطبيق:
+
+   streamlit run app.py
+
+4. The browser opens automatically at / هيفتحلك المتصفح تلقائياً على:
+   http://localhost:8501
+
+Faster way / طريقة أسرع:
+   Double-click on run_app.bat
+   انقري مرتين على run_app.bat
+
+To stop the app / لإيقاف التطبيق:
+   Press Ctrl + C in PowerShell
+   اضغطي Ctrl + C في PowerShell
+
+
+═══════════════════════════════════════════════════════════════
+PART 2: Upload to GitHub / رفع المشروع على GitHub
+═══════════════════════════════════════════════════════════════
+
+Steps / الخطوات:
+
+1. Go to https://github.com/new
+   روحي على https://github.com/new
+
+2. Create a new repository / اعملي repo جديد:
+   - Repository name: bmw-price-predictor
+   - Public ✅
+   - Do NOT add README or .gitignore (already included)
+     متعمليش README أو .gitignore (موجودين خلاص)
+
+3. Open PowerShell in the project folder and run these commands:
+   افتحي PowerShell في فولدر المشروع واكتبي:
+
+   git init
+   git config user.name "YOUR_GITHUB_USERNAME"
+   git config user.email "YOUR_EMAIL@gmail.com"
+   git add .
+   git commit -m "BMW Used Car Price Predictor"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/bmw-price-predictor.git
+   git push -u origin main
+
+   Replace YOUR_USERNAME and YOUR_EMAIL with your actual info
+   غيّري YOUR_USERNAME و YOUR_EMAIL لبياناتك الحقيقية
+
+4. When it asks for a password, use a Personal Access Token:
+   لما يطلب Password، استخدمي Personal Access Token:
+
+   - Go to https://github.com/settings/tokens/new
+     روحي على https://github.com/settings/tokens/new
+   - Note: BMW Project
+   - Scopes: check "repo" ✅
+     علّمي على "repo"
+   - Click "Generate token"
+     اضغطي Generate token
+   - Copy the token and paste it as the password
+     انسخي الـ Token والصقيه مكان الـ Password
+
+
+═══════════════════════════════════════════════════════════════
+PART 3: Deploy on Streamlit Cloud (Free) / نشر على Streamlit Cloud (مجاني)
+═══════════════════════════════════════════════════════════════
+
+Steps / الخطوات:
+
+1. Go to https://share.streamlit.io
+   روحي على https://share.streamlit.io
+
+2. Click "Continue with GitHub"
+   اضغطي "Continue with GitHub"
+
+3. Click "New app" and fill in:
+   اضغطي "New app" واملي:
+   - Repository: bmw-price-predictor
+   - Branch: main
+   - Main file path: app.py
+
+4. Click "Deploy" and wait 2-3 minutes
+   اضغطي Deploy واستني 2-3 دقايق
+
+5. You will get a permanent link like:
+   هيديكي لينك دائم شكله:
+   https://bmw-price-predictor.streamlit.app
+
+
+═══════════════════════════════════════════════════════════════
+Troubleshooting / لو حصلت مشكلة
+═══════════════════════════════════════════════════════════════
+
+If the prediction doesn't work, retrain the model:
+لو الـ Prediction مش شغال، أعيدي تدريب الموديل:
+
+   python retrain.py
+
+Then restart the app / بعدين شغّلي التطبيق تاني:
+
+   streamlit run app.py
+
+═══════════════════════════════════════════════════════════════
